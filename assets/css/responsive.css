@@ -1,0 +1,8 @@
+@media (max-width:1060px){.cards,.steps{grid-template-columns:repeat(2,1fr)}.tiles{grid-template-columns:repeat(3,1fr)}.nav ul{gap:1.2rem}}
+@media (max-width:860px){
+.menu-btn{display:block}
+.nav{position:fixed;inset:76px 0 auto;background:var(--ink);padding:1rem 1.5rem 2rem;border-top:1px solid var(--line);transform:translateY(-130%);transition:transform .35s var(--ease);visibility:hidden}
+.nav.open{transform:none;visibility:visible}.nav ul{flex-direction:column;gap:.4rem}.nav a{display:block;padding:.9rem 0;font-size:1rem}
+.split,.contact .split,.founder,.pillars{grid-template-columns:1fr}.portrait{min-height:300px}
+.brand span{display:none}}
+@media (max-width:560px){.cards,.steps,.two{grid-template-columns:1fr}.tiles{grid-template-columns:1fr 1fr}.tile:last-child{grid-column:1/-1;aspect-ratio:2/1}.btn{width:100%;justify-content:center}}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hepta-111.github.io/AMK-Consultants-Website/sitemap.xml
