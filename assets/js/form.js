@@ -1,5 +1,5 @@
 (()=>{const f=document.getElementById('inquiry');if(!f)return;const st=document.getElementById('status');
-const KEY=f.dataset.key,EMAIL='info@amkconsultants.com';
+const KEY=f.dataset.key,EMAIL='info@amkconsultants.co.ke';
 const rules={name:v=>v.trim().length>1||'Enter your full name.',org:v=>v.trim().length>1||'Enter your organisation.',email:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)||'Enter a valid business email address.',country:v=>v.trim().length>1||'Enter your country.',type:v=>!!v||'Choose the nature of your inquiry.',msg:v=>v.trim().length>=20||'Describe your inquiry in at least 20 characters.',consent:(v,el)=>el.checked||'Please accept the Privacy Notice to continue.'};
 const check=el=>{const r=rules[el.name](el.value,el),e=document.getElementById('e-'+el.name),bad=r!==true;el.setAttribute('aria-invalid',bad);if(e)e.textContent=bad?r:'';return !bad};
 const fields=()=>[...f.querySelectorAll('input,select,textarea')].filter(el=>rules[el.name]);
@@ -13,4 +13,4 @@ if(!KEY||KEY==='YOUR_WEB3FORMS_ACCESS_KEY'){const body=`Name: ${d.name}\nOrganis
 location.href=`mailto:${EMAIL}?subject=${encodeURIComponent('Website inquiry: '+d.type)}&body=${encodeURIComponent(body)}`;st.classList.add('ok');st.textContent='Your email app should open with the message ready to send.';return}
 try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:KEY,subject:'AMK website inquiry: '+d.type,...d})});
 if(!r.ok)throw 0;f.reset();st.classList.add('ok');st.textContent='Thank you. We have received your inquiry and will respond within two working days.'}
-catch{st.classList.add('bad');st.textContent=`We could not send your message. Please email ${EMAIL} directly.`}});})();
+catch{st.classList.add('bad');st.textContent=`We could not send your message. Please email ${EMAIL} directly.`}});document.querySelectorAll('[data-type]').forEach(a=>a.addEventListener('click',()=>{f.type.value=a.dataset.type}));})();
