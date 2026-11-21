@@ -1,9 +1,9 @@
 .hero{position:relative;min-height:100svh;display:grid;align-items:center;color:#fff;overflow:hidden;padding:9rem 0 8rem;background:radial-gradient(90% 70% at 85% 25%,rgba(214,128,62,.38),transparent 60%),linear-gradient(180deg,#0a1017,#101820 60%,#1b2631)}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(16,24,32,.92) 15%,rgba(16,24,32,.15))}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,16,23,.92) 0%,rgba(16,24,32,.72) 45%,rgba(16,24,32,.28) 100%),linear-gradient(180deg,rgba(10,16,23,.55),transparent 30%)}
 .wheel{position:absolute;z-index:1;right:-12vw;top:50%;width:min(62vw,720px);transform:translateY(-50%);opacity:.09;color:var(--gold);animation:spin 240s linear infinite}
 @keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
-.skyline{position:absolute;z-index:2;left:0;right:0;bottom:-1px;width:100%;height:clamp(70px,14vw,160px);color:var(--paper)}
+.hero::after{content:"";position:absolute;z-index:2;left:0;right:0;bottom:0;height:clamp(90px,14vw,170px);background:linear-gradient(180deg,transparent,var(--paper))}
 .hero .wrap{position:relative;z-index:3}
 .hero h1{max-width:13ch}.hero h1 em{display:block;font-style:normal;color:var(--gold)}
 .hero p{font-size:1.15rem;color:#dfe3e7;max-width:54ch}

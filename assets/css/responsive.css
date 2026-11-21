@@ -6,3 +6,6 @@
 .split,.contact .split,.lead,.pillars{grid-template-columns:1fr}
 .brand span{display:none}}
 @media (max-width:560px){.cards,.steps,.two{grid-template-columns:1fr}.tiles{grid-template-columns:1fr 1fr}.tile:last-child{grid-column:1/-1;aspect-ratio:2/1}.btn{width:100%;justify-content:center}}
+@media (max-width:1060px){.wheel{opacity:.06}}
+@media (max-width:700px){.wheel{display:none}}
+@media (max-width:860px){.hero::before{background:linear-gradient(180deg,rgba(10,16,23,.9),rgba(16,24,32,.74))}.hero-img{object-position:46% 50%}}
