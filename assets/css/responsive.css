@@ -9,3 +9,4 @@
 @media (max-width:1060px){.wheel{opacity:.06}}
 @media (max-width:700px){.wheel{display:none}}
 @media (max-width:860px){.hero::before{background:linear-gradient(180deg,rgba(10,16,23,.9),rgba(16,24,32,.74))}.hero-img{object-position:46% 50%}}
+@media (min-width:1061px) and (max-width:1200px){.wheel{opacity:.1;right:-10vw}}
