@@ -3,6 +3,7 @@ const KEY=f.dataset.key,EMAIL='info@amkconsultants.co.ke';
 const rules={name:v=>v.trim().length>1||'Enter your full name.',org:v=>v.trim().length>1||'Enter your organisation.',email:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)||'Enter a valid business email address.',country:v=>v.trim().length>1||'Enter your country.',type:v=>!!v||'Choose the nature of your inquiry.',msg:v=>v.trim().length>=20||'Describe your inquiry in at least 20 characters.',consent:(v,el)=>el.checked||'Please accept the Privacy Notice to continue.'};
 const check=el=>{const r=rules[el.name](el.value,el),e=document.getElementById('e-'+el.name),bad=r!==true;el.setAttribute('aria-invalid',bad);if(e)e.textContent=bad?r:'';return !bad};
 const fields=()=>[...f.querySelectorAll('input,select,textarea')].filter(el=>rules[el.name]);
+fields().forEach(el=>{el.setAttribute('aria-describedby','e-'+el.name);el.setAttribute('aria-required','true')});
 fields().forEach(el=>el.addEventListener('blur',()=>check(el)));
 f.addEventListener('submit',async ev=>{ev.preventDefault();st.className='status';st.textContent='';
 if(f.website.value)return;
